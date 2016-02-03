@@ -79,6 +79,7 @@ def set_up_appdynamics():
 
 
 def check_database_environment_variable():
+    os.environ["DATABASE_URL"] = "postgres://pjzvlmwc:gye9TaNo6C25zN6-6jpTZGLBVyeuVm5_@jumbo.db.elephantsql.com:5432/pjzvlmwc"
     try:
         buildpackutil.get_database_config()
         return True
@@ -93,6 +94,7 @@ def check_database_environment_variable():
 
 
 def check_admin_password_environment_variable():
+    os.environ["ADMIN_PASSWORD"] = "passw0rd"
     return check_environment_variable(
         'ADMIN_PASSWORD',
         'You should provide an ADMIN_PASSWORD environment variable'
